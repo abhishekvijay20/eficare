@@ -4,10 +4,12 @@ const cors = require("cors");
 const multer = require("multer");
 const app = express();
 require("dotenv").config();
+const path = require('path');
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // File upload handling
 const storage = multer.memoryStorage();
