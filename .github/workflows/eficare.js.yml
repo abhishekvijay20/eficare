@@ -17,8 +17,9 @@ jobs:
       with: 
         node-version: ${{ matrix.node-version }} 
     - run: | 
-        cd server
-        npm i
-        cd ../client
+        cd client
         npm i 
         npm run build
+        mv build/ ../server/static
+        cd ../server
+        npm i
