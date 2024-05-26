@@ -20,6 +20,8 @@ jobs:
         cd client
         npm i 
         npm run build
+        ls -la build/
         mv build/ ../server/static
+        ls -la ../server/
         cd ../server
         npm i
