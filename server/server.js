@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 const multer = require("multer");
 const app = express();
+require("dotenv").config();
 
 // Middleware
 app.use(cors());
@@ -17,7 +18,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail", // or any other email service
   auth: {
     user: "applications@eficare.net",
-    pass: "qzut dgrb broj zgdt",
+    pass: process.env.TRANSPORTER_PASSWORD,
   },
 });
 
