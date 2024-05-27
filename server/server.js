@@ -9,6 +9,7 @@ const path = require('path');
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'static')));
 
 // File upload handling
 const storage = multer.memoryStorage();
