@@ -28,7 +28,7 @@ jobs:
         echo "Contents of server/static directory:"
         ls -la ../server/static
         npm install pm2 -g
-        cd ..
+        cd ../server/
         npm install
         echo "Stopping all PM2 processes (if any)..."
         pm2 stop all || echo "No PM2 processes were running."
