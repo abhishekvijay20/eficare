@@ -20,13 +20,19 @@ jobs:
         cd client
         npm i 
         npm run build
+        echo "Contents of client/build directory:"
         ls -la build/
         mv build/ ../server/static
+        echo "Contents of server directory after moving build:"
         ls -la ../server/
+        echo "Contents of server/static directory:"
+        ls -la ../server/static
         npm install pm2 -g
-        cd ../server
-        npm i
-        pm2 stop all
+        cd server
+        npm install
+        echo "Stopping all PM2 processes (if any)..."
+        pm2 stop all || echo "No PM2 processes were running."
+        echo "Starting PM2 process..."
         pm2 start server.js --name eficare
         pm2 save
         sudo service nginx restart
