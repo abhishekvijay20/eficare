@@ -20,16 +20,20 @@ jobs:
         cd client
         npm i 
         npm run build
+        echo "Contents of client directory:"
+        ls -la
         echo "Contents of client/build directory:"
         ls -la build/
-        mv build/ ../server/static
+        cd ..
+        mkdir -p server/static
+        mv client/build/* server/static/
         echo "Contents of server directory after moving build:"
-        ls -la ../server/
+        ls -la server/
         echo "Contents of server/static directory:"
-        ls -la ../server/static
+        ls -la server/static
         npm install pm2 -g
         cd ../server/
-        npm install
+        npm i
         echo "Stopping all PM2 processes (if any)..."
         pm2 stop all || echo "No PM2 processes were running."
         echo "Starting PM2 process..."
