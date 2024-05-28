@@ -7,7 +7,7 @@ const IndustriesWeServe = () => {
       <Segment1
         cards={[
           {
-            title: "Crafting Succ ess in Finance",
+            title: "Crafting Success in Finance",
             description: "In the labyrinth of insurance and banking, we wield our expertise like master artisans, sculpting success stories with each placement. Our approach is not just about filling roles; it's about forging partnerships that drive growth and prosperity."
           },
           {
